@@ -38,12 +38,12 @@ void InputArray(int[,] arr, int minR, int maxR)
 }
 
 //************************
-string ArraySearch(int[,] arr, int indI, int indJ)
+void ArraySearch(int[,] arr, int indI, int indJ)
 {
     try
-    { return "= " + Convert.ToInt32(arr[indI - 1, indJ - 1]); }
+    { Console.WriteLine($"В массиве элемент c позицией [{indI}, {indJ}] = {Convert.ToInt32(arr[indI - 1, indJ - 1])}"); }
     catch (System.Exception)
-    { return "отсутствует"; }
+    { Console.WriteLine($"В массиве элемент c позицией [{indI}, {indJ}] отсутствует"); }
 }
 
 //***********************
@@ -60,6 +60,5 @@ else
 {
     int[,] array = new int[m, n];
     InputArray(array, minR, maxR);
-    string text = ArraySearch(array, indI, indJ);
-    Console.WriteLine($"В массиве элемент c позицией [{indI}, {indJ}] {text}");
+    ArraySearch(array, indI, indJ);
 }
